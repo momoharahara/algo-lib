@@ -1,0 +1,16 @@
+・venvで仮想環境構築
+    python3 -m venv venv
+・環境に入る
+    venv/bin/activate
+・出る
+    deactivate
+
+・pipでパッケージ管理
+    pip freeze:インストールしたパッケージのバージョン確認
+
+
+・ojのインストール
+    pip install online-judge-tools
+・ojのログイン、確認
+    oj login -u ユーザー名 -p パスワード "https://atcoder.jp/"
+    oj login --check "https://atcoder.jp/"
