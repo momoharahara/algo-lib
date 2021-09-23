@@ -1,0 +1,9 @@
+.vscode/
+
+ac-library/
+atcoder/
+
+venv/
+test/
+code/
+
