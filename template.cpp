@@ -22,8 +22,8 @@ using vvec = vector<vec<T>>;
 
 constexpr long long INF = 1LL << 60;
 constexpr int INF_INT = 1 << 25;
-constexpr long long MOD = (ll)1e9 + 7;
-//constexpr long long MOD = 998244353LL;
+// constexpr long long MOD = (ll)1e9 + 7;
+constexpr long long MOD = 998244353LL;
 static const ld pi = 3.141592653589793L;
 
 #pragma GCC target("avx2")

@@ -1,5 +1,5 @@
 #!/bin/sh
-contest_id='1572'
+contest_id='1588'
 contest_url='https://codeforces.com/contest/'$contest_id'/problem/'
 rm -rf test
 
