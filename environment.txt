@@ -1,7 +1,7 @@
 ・venvで仮想環境構築
     python3 -m venv venv
 ・環境に入る
-    venv/bin/activate
+    source venv/bin/activate
 ・出る
     deactivate
 
