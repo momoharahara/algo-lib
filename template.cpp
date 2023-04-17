@@ -48,7 +48,6 @@ inline bool chmax(T &a, T b) {
     return false;
 }
 
-//グラフ関連
 struct Edge {
     int to, rev;
     ll cap;
@@ -71,7 +70,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    //cout << fixed << setprecision(10);
+    // cout << fixed << setprecision(10);
 
     // ll t;
     // cin >> t;

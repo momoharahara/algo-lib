@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++ アクティブなファイルのビルド",
+      "command": "/usr/local/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-std=c++17",
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/debug/${fileBasenameNoExtension}.out"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "デバッガーによって生成されたタスク。",
+      "hide": true
+    },
+    {
+      "label": "Open Terminal",
+      "type": "shell",
+      "command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
+      "problemMatcher": []
+    }
+  ],
+  "version": "2.0.0"
+}

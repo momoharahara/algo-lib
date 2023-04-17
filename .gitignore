@@ -1,10 +1,12 @@
-.vscode/
-.DS_Store
-
 ac-library/
 atcoder/
 
 venv/
 test/
-code/
+src/
+bin/
+debug/
+
+in*
+out*
 
