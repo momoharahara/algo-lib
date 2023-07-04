@@ -3,10 +3,11 @@ atcoder/
 
 venv/
 test/
-src/
-bin/
+src/*.cpp
+bin/*.out
 debug/
 
 in*
 out*
 
+.DS_Store

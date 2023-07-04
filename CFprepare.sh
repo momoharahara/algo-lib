@@ -6,5 +6,5 @@ rm -rf test
 for i in A B C D E F G
 do
   oj download $contest_url$i -d test/$i/
-  cp template.cpp src/$i.cpp
+  cp template_cf.cpp src/$i.cpp
 done

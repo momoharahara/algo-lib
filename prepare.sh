@@ -1,5 +1,5 @@
 #!/bin/sh
-contest_name='abc302'
+contest_name='abc308'
 contest_url='https://atcoder.jp/contests/'$contest_name'/tasks/'$contest_name'_'
 rm -rf test
 
