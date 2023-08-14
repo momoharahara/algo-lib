@@ -6,4 +6,4 @@ cd ..
 src_file="src/$1.cpp"
 bin_file="bin/$1.out"
 
-g++ $src_file -std=c++17 -I lib -o $bin_file -Wall -Wextra -O2 && $bin_file
+g++ $src_file -std=gnu++20 -I lib -o $bin_file -Wall -Wextra -O2 && $bin_file

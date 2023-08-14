@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+using namespace atcoder;
 
 using ll = long long;
 using ull = unsigned long long;
