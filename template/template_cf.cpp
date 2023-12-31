@@ -72,11 +72,11 @@ int main() {
     cout.tie(0);
     // cout << fixed << setprecision(10);
 
-    // ll t;
-    // cin >> t;
-    // REP(i, t - 1) {
-    //     solve();
-    // }
+    ll t;
+    cin >> t;
+    REP(i, t - 1) {
+        solve();
+    }
 
     solve();
 
