@@ -4,7 +4,4 @@ src/*.cpp
 bin/*.out
 debug/
 
-in*
-out*
-
 .DS_Store
