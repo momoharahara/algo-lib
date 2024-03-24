@@ -7,7 +7,7 @@ source venv/bin/activate
 
 rm -rf test
 
-for i in a b c d e f g
+for i in a b c d e f g h
 do
   cp template/template.cpp src/$i.cpp
 done
