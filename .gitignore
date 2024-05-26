@@ -1,7 +1,7 @@
 venv/
 test/
 src/*.cpp
-bin/*.out
+bin/*
 debug/
 
 .DS_Store

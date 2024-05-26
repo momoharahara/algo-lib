@@ -8,4 +8,5 @@ bin_file="bin/$1.out"
 input_file="tools/in.txt"
 output_file="tools/out.txt"
 
-g++ $src_file -std=gnu++20 -I lib -o $bin_file -Wall -Wextra -O2 && $bin_file < $input_file > $output_file
+
+g++ $src_file -std=gnu++20 -I lib -o $bin_file -Wall -Wextra -O2   -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -DDEBUG && $bin_file < $input_file > $output_file
