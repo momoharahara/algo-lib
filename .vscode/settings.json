@@ -26,6 +26,19 @@
     "memory": "cpp",
     "format": "cpp",
     "functional": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "iosfwd": "cpp",
+    "__hash_table": "cpp",
+    "__tree": "cpp",
+    "initializer_list": "cpp",
+    "map": "cpp",
+    "regex": "cpp",
+    "set": "cpp",
+    "span": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "ranges": "cpp",
+    "stacktrace": "cpp"
   }
 }
