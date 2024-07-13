@@ -5,3 +5,5 @@ bin/*
 debug/
 
 .DS_Store
+
+!lib/debug
