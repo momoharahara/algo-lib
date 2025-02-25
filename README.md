@@ -1,26 +1,47 @@
-## venv環境について
-- venvで仮想環境構築
+## ACL 利用について
+
+lib 配下ですでに clone した ac-library のフォルダを指定してリンク作成
+
+```
+ln -sL ~/dev/ac-library/atcoder/ atcoder
+```
+
+## venv 環境について
+
+- venv で仮想環境構築
+
 ```
 python3 -m venv venv
 ```
-- venv環境に入る
+
+- venv 環境に入る
+
 ```
 source venv/bin/activate
 ```
-- venv環境から出る
+
+- venv 環境から出る
+
 ```
 deactivate
 ```
-## pipでパッケージ管理
+
+## pip でパッケージ管理
+
 - インストールしたパッケージのバージョン確認
+
 ```
 pip freeze
 ```
+
 ## online-judge-tools
-- ojのインストール
+
+- oj のインストール
+
 ```sh
 pip install online-judge-tools
 ```
-- ojのログイン、確認
-    oj login -u ユーザー名 -p パスワード "https://atcoder.jp/"
-    oj login --check "https://atcoder.jp/"
+
+- oj のログイン、確認
+  oj login -u ユーザー名 -p パスワード "https://atcoder.jp/"
+  oj login --check "https://atcoder.jp/"
