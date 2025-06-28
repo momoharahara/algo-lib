@@ -107,5 +107,6 @@
     "text_encoding": "cpp",
     "thread": "cpp",
     "typeindex": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "enabled"
 }
