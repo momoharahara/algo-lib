@@ -5,8 +5,10 @@ cd ..
 
 source venv/bin/activate
 
-contest_name='abc345'
-contest_url='https://atcoder.jp/contests/'$contest_name'/tasks/'$contest_name'_'
+contest_name='abc420'
+problem_name="${contest_name}"
+# problem_name='codequeen2025_final'
+contest_url='https://atcoder.jp/contests/'$contest_name'/tasks/'$problem_name'_'
 rm -rf test
 
 for i in a b c d e f g
