@@ -106,7 +106,9 @@
     "system_error": "cpp",
     "text_encoding": "cpp",
     "thread": "cpp",
-    "typeindex": "cpp"
+    "typeindex": "cpp",
+    "flat_map": "cpp",
+    "flat_set": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabled"
 }
