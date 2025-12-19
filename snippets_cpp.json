@@ -3510,19 +3510,12 @@
   "subset": {
     "prefix": "subset",
     "body": [
-      "//部分集合 O(3^n)",
-      "for(int j = i; j >= 0; --j) {",
-      "    j &= i;",
-      "    long long cost = 0;",
-      "    for(int k = 0; k < N; ++k) {",
-      "        if(!((i >> k) & 1)) {",
-      "            cost += std::min({xsel[j][k], ysel[i - j][k]});",
-      "        }",
-      "    }",
-      "    ans[cnt] = std::min(ans[cnt], cost);",
-      "}"
+      "        for(int state = now; (state & now) > 0; --state) {",
+      "            state &= now;",
+      "            // todo",
+      "        }"
     ],
-    "description": "部分集合の列挙 O(3^n)"
+    "description": ""
   },
   "sum": {
     "prefix": "sum",
