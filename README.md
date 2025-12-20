@@ -42,6 +42,7 @@ pip freeze
 pip install online-judge-tools
 ```
 
-- oj のログイン、確認
-  oj login -u ユーザー名 -p パスワード "https://atcoder.jp/"
-  oj login --check "https://atcoder.jp/"
+- oj のログイン確認
+  1. oj login "https://atcoder.jp/"
+  1. ダメな場合は https://github.com/key-moon/aclogin
+
