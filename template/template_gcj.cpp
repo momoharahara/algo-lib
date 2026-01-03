@@ -16,7 +16,7 @@ using vvec = vector<vec<T>>;
 #define all(hoge) (hoge).begin(), (hoge).end()
 #define en '\n'
 #define rep(i, m, n) for(ll i = (ll)(m); i < (ll)(n); ++i)
-#define rep2(i, m, n) for(ll i = (ll)(n)-1; i >= (ll)(m); --i)
+#define rep2(i, m, n) for(ll i = (ll)(n) - 1; i >= (ll)(m); --i)
 #define REP(i, n) rep(i, 0, n)
 #define REP2(i, n) rep2(i, 0, n)
 
