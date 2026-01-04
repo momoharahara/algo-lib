@@ -5841,20 +5841,19 @@
   "xor_base": {
     "prefix": "xor_base",
     "body": [
-      "void xor_base(ll v, vec<ll> &base, vec<ll> &vs) {",
-      "    int _v = v;",
-      "    for(int e : base) {",
+      "bool xor_base(ll v, vec<ll> &base, vec<ll> &vs) {",
+      "    ll _v = v;",
+      "    for(ll e : base) {",
       "        _v = min(_v, _v ^ e);",
       "    }",
       "    if(_v > 0) {",
       "        // cout << bitset<18>(v) << \" \" << bitset<18>(_v) << en;",
       "        base.push_back(_v);",
       "        vs.push_back(v);",
+      "        return true;",
       "    }",
-      "}",
-      "// https://atcoder.jp/contests/arc138/submissions/30834408",
-      "vec<ll> base;",
-      "vec<ll> vs;"
+      "    return false;",
+      "}"
     ],
     "description": ""
   },
