@@ -3,9 +3,7 @@
 cd `dirname $0`
 cd ..
 
-source venv/bin/activate
-
-contest_name='agc076'
+contest_name='abc440'
 problem_name="${contest_name}"
 # problem_name='codequeen2025_final'
 contest_url='https://atcoder.jp/contests/'$contest_name'/tasks/'$problem_name'_'
