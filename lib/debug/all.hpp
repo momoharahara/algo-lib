@@ -1,82 +1,68 @@
+#include <atcoder/all>
 #include <bits/stdc++.h>
-// デバッグ系 https://www.creativ.xyz/dump-cpp-652/
 
 using namespace std;
+using namespace atcoder;
 
-#define repi(itr, ds) for(auto itr = ds.begin(); itr != ds.end(); itr++)
+/// ===== pair =====
 
-// vector
-template <typename T>
-istream &operator>>(istream &is, vector<T> &vec) {
-    for(T &x : vec)
-        is >> x;
-    return is;
+template <class T, class U>
+ostream &operator<<(ostream &os, const pair<T, U> &p) {
+    return os << "(" << p.first << ", " << p.second << ")";
 }
-// pair
-template <typename T, typename U>
-ostream &operator<<(ostream &os, pair<T, U> &pair_var) {
-    os << "(" << pair_var.first << ", " << pair_var.second << ")";
-    return os;
+
+/// ===== modint =====
+
+template <int m>
+ostream &operator<<(ostream &os, const static_modint<m> &x) {
+    return os << x.val();
 }
-// vector
-template <typename T>
-ostream &operator<<(ostream &os, const vector<T> &vec) {
+
+ostream &operator<<(ostream &os, const modint &x) {
+    return os << x.val();
+}
+
+/// ===== iterable container =====
+/// vector / debug vector / set / map / deque / list / etc
+
+template <class T>
+concept Iterable =
+    requires(T a) {
+        begin(a);
+        end(a);
+    } && !std::is_same_v<T, std::string>;
+
+template <Iterable T>
+ostream &operator<<(ostream &os, const T &v) {
     os << "{";
-    for(int i = 0; i < vec.size(); i++) {
-        os << vec[i] << (i + 1 == vec.size() ? "" : ", ");
-    }
-    os << "}";
-    return os;
-}
-// map
-template <typename T, typename U>
-ostream &operator<<(ostream &os, map<T, U> &map_var) {
-    os << "{";
-    repi(itr, map_var) {
-        os << *itr;
-        itr++;
-        if(itr != map_var.end())
+    bool first = true;
+    for(auto &&x : v) {
+        if(!first)
             os << ", ";
-        itr--;
+        first = false;
+        os << x;
     }
     os << "}";
     return os;
 }
-// set
-template <typename T>
-ostream &operator<<(ostream &os, set<T> &set_var) {
-    os << "{";
-    repi(itr, set_var) {
-        os << *itr;
-        itr++;
-        if(itr != set_var.end())
-            os << ", ";
-        itr--;
-    }
-    os << "}";
-    return os;
-}
+
+/// ===== debug output =====
 
 #define DUMPOUT cerr
 
 void dump_func() {
     DUMPOUT << endl;
 }
+
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&...tail) {
     DUMPOUT << head;
-    if(sizeof...(Tail) > 0) {
+    if(sizeof...(Tail) > 0)
         DUMPOUT << ", ";
-    }
-    dump_func(std::move(tail)...);
+    dump_func(std::forward<Tail>(tail)...);
 }
 
-#define DEB
-#define dump(...)                                                       \
-    DUMPOUT << "  " << string(#__VA_ARGS__) << ": "                     \
-            << "[" << to_string(__LINE__) << ":" << __FUNCTION__ << "]" \
-            << endl                                                     \
-            << "    ",                                                  \
+#define dump(...)                                                 \
+    DUMPOUT << "  " << #__VA_ARGS__                               \
+            << " [" << __LINE__ << ":" << __FUNCTION__ << "] = ", \
         dump_func(__VA_ARGS__)
-
-// デバッグ系おわり

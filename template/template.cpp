@@ -52,6 +52,15 @@ inline bool chmax(T &a, T b) {
     return false;
 }
 
+template <int m>
+ostream &operator<<(ostream &os, const static_modint<m> &x) {
+    return os << x.val();
+}
+
+ostream &operator<<(ostream &os, const modint &x) {
+    return os << x.val();
+}
+
 struct Edge {
     int to, rev;
     ll cap;
