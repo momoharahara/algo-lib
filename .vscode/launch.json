@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug with LLDB",
+      "type": "lldb",
+      "request": "launch",
+
+      "program": "${workspaceFolder}/bin/a.out",
+
+      "args": [],
+
+      "cwd": "${workspaceFolder}",
+
+      "preLaunchTask": "build with gcc",
+
+      "stdio": [
+        "${workspaceFolder}/tools/in.txt",
+        "${workspaceFolder}/tools/out.txt",
+        "${workspaceFolder}/tools/err.txt"
+      ]
+    }
+  ]
+}
