@@ -28,8 +28,7 @@ class Expander:
             return ""
         self.expanded_files.add(path)
 
-        label = self._display_path(path)
-        lines: list[str] = [f"// BEGIN {label}"]
+        lines: list[str] = []
         for raw_line in path.read_text().splitlines():
             if raw_line.strip() == "#pragma once":
                 continue
@@ -40,6 +39,9 @@ class Expander:
                 continue
 
             delimiter, include_path = match.groups()
+            if include_path == "debug/all.hpp":
+                lines.append(raw_line)
+                continue
             if not self.expand_acl and include_path.startswith("atcoder/"):
                 lines.append(raw_line)
                 continue
@@ -49,7 +51,6 @@ class Expander:
                 continue
 
             lines.append(self._expand_file(resolved))
-        lines.append(f"// END {label}")
         return "\n".join(lines)
 
     def _resolve_include(self, base_dir: Path, include_path: str, quoted: bool) -> Path | None:
@@ -66,12 +67,6 @@ class Expander:
             if self.root == resolved or self.root in resolved.parents:
                 return resolved
         return None
-
-    def _display_path(self, path: Path) -> Path:
-        try:
-            return path.relative_to(self.root)
-        except ValueError:
-            return path
 
     def _read_expand_acl_policy(self, path: Path) -> bool:
         try:
