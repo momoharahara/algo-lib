@@ -1,3 +1,4 @@
+// expand-acl: off
 #include <atcoder/all>
 #include <bits/stdc++.h>
 
