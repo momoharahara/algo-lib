@@ -56,21 +56,6 @@ inline bool chmax(T &a, T b) {
     return false;
 }
 
-struct Edge {
-    int to, rev;
-    ll cap;
-    Edge(int _to, int _rev, ll _cap) : to(_to), rev(_rev), cap(_cap) {}
-};
-
-typedef vector<Edge> Edges;
-typedef vector<Edges> Graph;
-
-void add_edge(Graph &G, int from, int to, ll cap, bool revFlag, ll revCap) {
-    G[from].push_back(Edge(to, (int)G[to].size(), cap));
-    if(revFlag)
-        G[to].push_back(Edge(from, (int)G[from].size() - 1, revCap));
-}
-
 void solve() {
 }
 
