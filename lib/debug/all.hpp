@@ -11,17 +11,6 @@ ostream &operator<<(ostream &os, const pair<T, U> &p) {
     return os << "(" << p.first << ", " << p.second << ")";
 }
 
-/// ===== modint =====
-
-template <int m>
-ostream &operator<<(ostream &os, const static_modint<m> &x) {
-    return os << x.val();
-}
-
-ostream &operator<<(ostream &os, const modint &x) {
-    return os << x.val();
-}
-
 /// ===== iterable container =====
 /// vector / debug vector / set / map / deque / list / etc
 
