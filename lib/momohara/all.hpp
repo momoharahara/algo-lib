@@ -1,8 +1,18 @@
 #pragma once
 
+#include "accumulate_sum.hpp"
 #include "ahocorasick.hpp"
 #include "combination.hpp"
+#include "divisor.hpp"
+#include "eratosthenes.hpp"
+#include "extgcd.hpp"
+#include "factoring.hpp"
 #include "fenwick_tree.hpp"
+#include "floor_sum.hpp"
 #include "rolling_hash.hpp"
 #include "trie.hpp"
 #include "unionfind.hpp"
+#include "unionfindpersistent.hpp"
+#include "unionfindpotential.hpp"
+#include "unionfindundo.hpp"
+#include "z_algorithm.hpp"
