@@ -9,7 +9,6 @@ from pathlib import Path
 
 
 INCLUDE_RE = re.compile(r'^\s*#\s*include\s*([<"])([^>"]+)[>"]\s*$')
-EXPAND_ACL_RE = re.compile(r"^\s*//\s*expand-acl:\s*(on|off)\s*$")
 
 
 class Expander:
@@ -17,10 +16,8 @@ class Expander:
         self.root = root.resolve()
         self.include_roots = [self.root, self.root / "lib"]
         self.expanded_files: set[Path] = set()
-        self.expand_acl = True
 
     def expand(self, path: Path) -> str:
-        self.expand_acl = self._read_expand_acl_policy(path.resolve())
         return self._expand_file(path.resolve())
 
     def _expand_file(self, path: Path) -> str:
@@ -42,7 +39,7 @@ class Expander:
             if include_path == "debug/all.hpp":
                 lines.append(raw_line)
                 continue
-            if not self.expand_acl and include_path.startswith("atcoder/"):
+            if include_path == "atcoder/all":
                 lines.append(raw_line)
                 continue
             resolved = self._resolve_include(path.parent, include_path, delimiter == '"')
@@ -54,30 +51,24 @@ class Expander:
         return "\n".join(lines)
 
     def _resolve_include(self, base_dir: Path, include_path: str, quoted: bool) -> Path | None:
-        candidates: list[Path] = []
+        candidates: list[tuple[Path, bool]] = []
         if quoted:
-            candidates.append(base_dir / include_path)
+            candidates.append((base_dir / include_path, False))
         for include_root in self.include_roots:
-            candidates.append(include_root / include_path)
+            candidates.append((include_root / include_path, True))
 
-        for candidate in candidates:
+        for candidate, from_include_root in candidates:
             if not candidate.exists():
                 continue
             resolved = candidate.resolve()
             if self.root == resolved or self.root in resolved.parents:
                 return resolved
+            if from_include_root and self._is_under_include_root(candidate):
+                return resolved
         return None
 
-    def _read_expand_acl_policy(self, path: Path) -> bool:
-        try:
-            for raw_line in path.read_text().splitlines()[:20]:
-                match = EXPAND_ACL_RE.match(raw_line)
-                if match is not None:
-                    return match.group(1) == "on"
-        except OSError:
-            pass
-        return True
-
+    def _is_under_include_root(self, path: Path) -> bool:
+        return any(include_root == path or include_root in path.parents for include_root in self.include_roots)
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Expand local #include files into a single submission file.")

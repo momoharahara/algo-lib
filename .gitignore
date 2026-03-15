@@ -6,3 +6,5 @@ debug/
 .DS_Store
 
 !lib/debug
+
+__pycache__

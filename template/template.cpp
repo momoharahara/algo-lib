@@ -1,8 +1,7 @@
-// expand-acl: off
+#include <momohara/macro.hpp>
+
 #include <atcoder/all>
 using namespace atcoder;
-
-#include <momohara/macro.hpp>
 
 template <int m>
 ostream &operator<<(ostream &os, const static_modint<m> &x) {
