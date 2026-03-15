@@ -1,0 +1,4 @@
+- [x] debugger を使えるようにしたい
+- [ ] libraryを整備したい
+- [ ] random testを簡単に書ける環境を整えたい
+- [ ] intaractive testを簡単に書ける環境を整えたい
