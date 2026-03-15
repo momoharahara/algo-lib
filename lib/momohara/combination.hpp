@@ -1,33 +1,8 @@
 #pragma once
 
-#include <concepts>
 #include <vector>
 
 namespace momohara {
-
-namespace detail {
-
-template <class T>
-concept HasModMethod = requires {
-    { T::mod() } -> std::convertible_to<int>;
-};
-
-template <class T>
-concept HasGetModMethod = requires {
-    { T::get_mod() } -> std::convertible_to<int>;
-};
-
-template <class T>
-int mod_value() {
-    if constexpr(HasModMethod<T>) {
-        return T::mod();
-    } else {
-        static_assert(HasGetModMethod<T>, "T must provide mod() or get_mod()");
-        return T::get_mod();
-    }
-}
-
-} // namespace detail
 
 template <class T>
 struct Combination {
@@ -46,7 +21,7 @@ struct Combination {
         fact_.assign(n, T(1));
         inv_.assign(n, T(1));
         finv_.assign(n, T(1));
-        mod_ = detail::mod_value<T>();
+        mod_ = T::mod();
         for(int i = 2; i < n; ++i) {
             fact_[i] = fact_[i - 1] * i;
             inv_[i] = -inv_[mod_ % i] * (mod_ / i);
