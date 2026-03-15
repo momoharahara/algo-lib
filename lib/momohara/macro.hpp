@@ -11,6 +11,7 @@ using namespace std;
 #endif
 
 using ll = long long;
+using i128 = __int128_t;
 using ull = unsigned long long;
 using ld = long double;
 using P = pair<ll, ll>;
