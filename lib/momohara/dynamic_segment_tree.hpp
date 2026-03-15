@@ -8,18 +8,18 @@
 namespace momohara {
 
 template <class S, S (*op)(S, S), S (*e)()>
-class dynamic_segtree {
-    struct node;
-    using node_ptr = std::unique_ptr<node>;
+class DynamicSegmentTree {
+    struct Node;
+    using NodePtr = std::unique_ptr<Node>;
 
-    struct node {
+    struct Node {
         std::size_t index;
         S value;
         S product;
-        node_ptr left;
-        node_ptr right;
+        NodePtr left;
+        NodePtr right;
 
-        node(std::size_t index, S value)
+        Node(std::size_t index, S value)
             : index(index), value(value), product(value), left(nullptr), right(nullptr) {}
 
         void update() {
@@ -28,10 +28,10 @@ class dynamic_segtree {
     };
 
     const std::size_t n_;
-    node_ptr root_;
+    NodePtr root_;
 
   public:
-    explicit dynamic_segtree(std::size_t n) : n_(n), root_(nullptr) {}
+    explicit DynamicSegmentTree(std::size_t n) : n_(n), root_(nullptr) {}
 
     void set(std::size_t p, S x) {
         assert(p < n_);
@@ -84,9 +84,9 @@ class dynamic_segtree {
     }
 
   private:
-    void set(node_ptr &t, std::size_t a, std::size_t b, std::size_t p, S x) const {
+    void set(NodePtr &t, std::size_t a, std::size_t b, std::size_t p, S x) const {
         if(!t) {
-            t = std::make_unique<node>(p, x);
+            t = std::make_unique<Node>(p, x);
             return;
         }
         if(t->index == p) {
@@ -111,7 +111,7 @@ class dynamic_segtree {
         t->update();
     }
 
-    S get(const node_ptr &t, std::size_t a, std::size_t b, std::size_t p) const {
+    S get(const NodePtr &t, std::size_t a, std::size_t b, std::size_t p) const {
         if(!t)
             return e();
         if(t->index == p)
@@ -122,7 +122,7 @@ class dynamic_segtree {
         return get(t->right, c, b, p);
     }
 
-    S prod(const node_ptr &t, std::size_t a, std::size_t b, std::size_t l, std::size_t r) const {
+    S prod(const NodePtr &t, std::size_t a, std::size_t b, std::size_t l, std::size_t r) const {
         if(!t || b <= l || r <= a)
             return e();
         if(l <= a && b <= r)
@@ -134,7 +134,7 @@ class dynamic_segtree {
         return op(result, prod(t->right, c, b, l, r));
     }
 
-    void reset(node_ptr &t, std::size_t a, std::size_t b, std::size_t l, std::size_t r) const {
+    void reset(NodePtr &t, std::size_t a, std::size_t b, std::size_t l, std::size_t r) const {
         if(!t || b <= l || r <= a)
             return;
         if(l <= a && b <= r) {
@@ -148,7 +148,7 @@ class dynamic_segtree {
     }
 
     template <class F>
-    std::size_t max_right(const node_ptr &t, std::size_t a, std::size_t b, std::size_t l, const F &f, S &product) const {
+    std::size_t max_right(const NodePtr &t, std::size_t a, std::size_t b, std::size_t l, const F &f, S &product) const {
         if(!t || b <= l)
             return n_;
         if(f(op(product, t->product))) {
@@ -168,7 +168,7 @@ class dynamic_segtree {
     }
 
     template <class F>
-    std::size_t min_left(const node_ptr &t, std::size_t a, std::size_t b, std::size_t r, const F &f, S &product) const {
+    std::size_t min_left(const NodePtr &t, std::size_t a, std::size_t b, std::size_t r, const F &f, S &product) const {
         if(!t || r <= a)
             return 0;
         if(f(op(t->product, product))) {

@@ -32,11 +32,11 @@ template <class S,
           S (*mapping)(F, S),
           F (*composition)(F, F),
           F (*id)()>
-struct segtree_beats {
+struct SegmentTreeBeats {
   public:
-    segtree_beats() : segtree_beats(0) {}
-    explicit segtree_beats(int n) : segtree_beats(std::vector<S>(n, e())) {}
-    explicit segtree_beats(const std::vector<S> &v) : _n(static_cast<int>(v.size())) {
+    SegmentTreeBeats() : SegmentTreeBeats(0) {}
+    explicit SegmentTreeBeats(int n) : SegmentTreeBeats(std::vector<S>(n, e())) {}
+    explicit SegmentTreeBeats(const std::vector<S> &v) : _n(static_cast<int>(v.size())) {
         log = ceil_pow2(_n);
         size = 1 << log;
         d = std::vector<S>(2 * size, e());
@@ -299,7 +299,7 @@ inline S mapping(F f, S x) {
     return x;
 }
 
-using segtree = segtree_beats<S, op, e, F, mapping, composition, id>;
+using SegmentTree = SegmentTreeBeats<S, op, e, F, mapping, composition, id>;
 
 } // namespace RangeUpdateDivideRangeSum
 

@@ -6,7 +6,7 @@
 
 namespace momohara {
 
-class persistentUF {
+class PersistentUnionFind {
   public:
     int now;
     std::vector<int> par;
@@ -14,7 +14,7 @@ class persistentUF {
     std::vector<int> time;
     std::vector<std::vector<std::pair<int, int>>> num;
 
-    explicit persistentUF(int n)
+    explicit PersistentUnionFind(int n)
         : now(0),
           par(n, 0),
           rank(n, 0),

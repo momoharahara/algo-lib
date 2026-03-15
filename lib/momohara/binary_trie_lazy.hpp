@@ -6,17 +6,17 @@
 namespace momohara {
 
 template <typename U = unsigned, int B = 32>
-class lazy_binary_trie {
-    struct node {
+class LazyBinaryTrie {
+    struct Node {
         int cnt;
         U lazy;
-        node *ch[2];
-        node() : cnt(0), lazy(0), ch{nullptr, nullptr} {}
+        Node *ch[2];
+        Node() : cnt(0), lazy(0), ch{nullptr, nullptr} {}
     };
 
-    node *root_;
+    Node *root_;
 
-    void push(node *t, int b) {
+    void push(Node *t, int b) {
         if((t->lazy >> static_cast<U>(b)) & static_cast<U>(1))
             std::swap(t->ch[0], t->ch[1]);
         if(t->ch[0])
@@ -26,9 +26,9 @@ class lazy_binary_trie {
         t->lazy = 0;
     }
 
-    node *add(node *t, U val, int b = B - 1) {
+    Node *add(Node *t, U val, int b = B - 1) {
         if(!t)
-            t = new node;
+            t = new Node;
         ++t->cnt;
         if(b < 0)
             return t;
@@ -38,7 +38,7 @@ class lazy_binary_trie {
         return t;
     }
 
-    node *sub(node *t, U val, int b = B - 1) {
+    Node *sub(Node *t, U val, int b = B - 1) {
         assert(t);
         --t->cnt;
         if(t->cnt == 0)
@@ -51,7 +51,7 @@ class lazy_binary_trie {
         return t;
     }
 
-    U get_min(node *t, U val, int b = B - 1) {
+    U get_min(Node *t, U val, int b = B - 1) {
         assert(t);
         if(b < 0)
             return 0;
@@ -61,7 +61,7 @@ class lazy_binary_trie {
         return get_min(t->ch[f], val, b - 1) | (static_cast<U>(f) << static_cast<U>(b));
     }
 
-    U get(node *t, int k, int b = B - 1) {
+    U get(Node *t, int k, int b = B - 1) {
         if(b < 0)
             return 0;
         push(t, b);
@@ -71,7 +71,7 @@ class lazy_binary_trie {
         return get(t->ch[1], k - m, b - 1) | (static_cast<U>(1) << static_cast<U>(b));
     }
 
-    int count_lower(node *t, U val, int b = B - 1) {
+    int count_lower(Node *t, U val, int b = B - 1) {
         if(!t || b < 0)
             return 0;
         push(t, b);
@@ -80,7 +80,7 @@ class lazy_binary_trie {
     }
 
   public:
-    lazy_binary_trie() : root_(nullptr) {}
+    LazyBinaryTrie() : root_(nullptr) {}
 
     int size() const {
         return root_ ? root_->cnt : 0;
@@ -127,7 +127,7 @@ class lazy_binary_trie {
     int count(U val) {
         if(!root_)
             return 0;
-        node *t = root_;
+        Node *t = root_;
         for(int i = B - 1; i >= 0; --i) {
             push(t, i);
             t = t->ch[(val >> static_cast<U>(i)) & static_cast<U>(1)];

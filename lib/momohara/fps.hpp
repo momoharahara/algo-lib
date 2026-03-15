@@ -499,17 +499,17 @@ FormalPowerSeries<mint> FormalPowerSeries<mint>::inv(int deg) const {
 
 template <typename mint>
 FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
-    using fps = FormalPowerSeries<mint>;
+    using FPS = FormalPowerSeries<mint>;
     assert(this->empty() || (*this)[0] == mint(0));
     if(deg == -1)
         deg = static_cast<int>(this->size());
 
-    fps inv;
+    FPS inv;
     inv.reserve(deg + 1);
     inv.push_back(mint(0));
     inv.push_back(mint(1));
 
-    auto inplace_integral = [&](fps &f) {
+    auto inplace_integral = [&](FPS &f) {
         int n = static_cast<int>(f.size());
         auto mod = mint::mod();
         while(static_cast<int>(inv.size()) <= n) {
@@ -521,7 +521,7 @@ FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
             f[i] *= inv[i];
     };
 
-    auto inplace_diff = [](fps &f) {
+    auto inplace_diff = [](FPS &f) {
         if(f.empty())
             return;
         f.erase(begin(f));
@@ -532,13 +532,13 @@ FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
         }
     };
 
-    fps b{1, 1 < static_cast<int>(this->size()) ? (*this)[1] : 0}, c{1}, z1, z2{1, 1};
+    FPS b{1, 1 < static_cast<int>(this->size()) ? (*this)[1] : 0}, c{1}, z1, z2{1, 1};
     for(int m = 2; m < deg; m <<= 1) {
         auto y = b;
         y.resize(2 * m);
         y.ntt();
         z1 = z2;
-        fps z(m);
+        FPS z(m);
         for(int i = 0; i < m; ++i)
             z[i] = y[i] * z1[i];
         z.intt();
@@ -551,7 +551,7 @@ FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
         z2 = c;
         z2.resize(2 * m);
         z2.ntt();
-        fps x(begin(*this), begin(*this) + std::min<int>(this->size(), m));
+        FPS x(begin(*this), begin(*this) + std::min<int>(this->size(), m));
         x.resize(m);
         inplace_diff(x);
         x.push_back(mint(0));
@@ -578,7 +578,7 @@ FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
         x.intt();
         b.insert(end(b), begin(x) + m, end(x));
     }
-    return fps{begin(b), begin(b) + deg};
+    return FPS{begin(b), begin(b) + deg};
 }
 
 template <typename mint>

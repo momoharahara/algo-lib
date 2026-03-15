@@ -7,22 +7,22 @@
 namespace momohara {
 
 template <typename T, const T id>
-class convex_hull_trick {
-    struct line {
+class ConvexHullTrick {
+    struct Line {
         T a;
         T b;
-        line(T a = 0, T b = 0) : a(a), b(b) {}
+        Line(T a = 0, T b = 0) : a(a), b(b) {}
         T get(T x) const {
             return a * x + b;
         }
     };
 
-    struct node {
-        line l;
-        node *lch;
-        node *rch;
-        explicit node(line l) : l(l), lch(nullptr), rch(nullptr) {}
-        ~node() {
+    struct Node {
+        Line l;
+        Node *lch;
+        Node *rch;
+        explicit Node(Line l) : l(l), lch(nullptr), rch(nullptr) {}
+        ~Node() {
             delete lch;
             delete rch;
         }
@@ -30,11 +30,11 @@ class convex_hull_trick {
 
     int n_;
     std::vector<T> pos_;
-    node *root_;
+    Node *root_;
 
-    node *modify(node *p, int lb, int ub, line &l) {
+    Node *modify(Node *p, int lb, int ub, Line &l) {
         if(!p)
-            return new node(l);
+            return new Node(l);
         if(p->l.get(pos_[lb]) >= l.get(pos_[lb]) && p->l.get(pos_[ub]) >= l.get(pos_[ub]))
             return p;
         if(p->l.get(pos_[lb]) <= l.get(pos_[lb]) && p->l.get(pos_[ub]) <= l.get(pos_[ub])) {
@@ -52,7 +52,7 @@ class convex_hull_trick {
         return p;
     }
 
-    T sub(node *p, int lb, int ub, int t) const {
+    T sub(Node *p, int lb, int ub, int t) const {
         if(!p)
             return id;
         if(ub - lb == 0)
@@ -64,14 +64,14 @@ class convex_hull_trick {
     }
 
   public:
-    explicit convex_hull_trick(const std::vector<T> &pos) : n_(static_cast<int>(pos.size())), pos_(pos), root_(nullptr) {}
+    explicit ConvexHullTrick(const std::vector<T> &pos) : n_(static_cast<int>(pos.size())), pos_(pos), root_(nullptr) {}
 
-    ~convex_hull_trick() {
+    ~ConvexHullTrick() {
         delete root_;
     }
 
     void insert(T a, T b) {
-        line l(a, b);
+        Line l(a, b);
         root_ = modify(root_, 0, n_ - 1, l);
     }
 

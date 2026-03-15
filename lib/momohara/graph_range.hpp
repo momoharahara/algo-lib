@@ -9,16 +9,16 @@
 namespace momohara {
 
 template <typename W>
-struct range_edge_graph {
-    struct edge {
+struct RangeEdgeGraph {
+    struct Edge {
         int to;
         W weight;
     };
 
     int n;
-    std::vector<std::vector<edge>> g;
+    std::vector<std::vector<Edge>> g;
 
-    explicit range_edge_graph(int n) : n(n), g(4 * n) {
+    explicit RangeEdgeGraph(int n) : n(n), g(4 * n) {
         for(int i = 1; i < n; ++i) {
             int cl = i << 1;
             int cr = i << 1 | 1;
@@ -39,7 +39,7 @@ struct range_edge_graph {
             if(r1 & 1)
                 --r1, g[r1 + 2 * n].push_back({idx, 0});
         }
-        std::vector<edge> node;
+        std::vector<Edge> node;
         for(l2 += n, r2 += n; l2 < r2; l2 >>= 1, r2 >>= 1) {
             if(l2 & 1)
                 node.push_back({l2++, w});
