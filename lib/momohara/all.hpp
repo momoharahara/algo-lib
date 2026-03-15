@@ -30,6 +30,7 @@
 #include "lis_fast.hpp"
 #include "low_link.hpp"
 #include "maxindependentset.hpp"
+#include "mo.hpp"
 #include "mpow.hpp"
 #include "prime.hpp"
 #include "pow2.hpp"
