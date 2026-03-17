@@ -386,7 +386,7 @@ struct FormalPowerSeries : std::vector<mint> {
             deg = static_cast<int>(this->size());
         return (this->diff() * this->inv(deg)).pre(deg - 1).integral();
     }
-    FPS pow(int64_t k, int deg = -1) const {
+    FPS pow(int64_t k, int deg) const {
         int n = static_cast<int>(this->size());
         if(deg == -1)
             deg = n;
