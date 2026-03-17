@@ -675,4 +675,34 @@ mint bostan_mori(long long n, FormalPowerSeries<mint> q, FormalPowerSeries<mint>
     return LinearRecurrence<mint>(n, q, p);
 }
 
+// [x^n] f(x)^i g(x) を i=0,1,...,n で列挙
+// 簡単のため [x^0] f = 0 を仮定
+template <typename mint>
+FormalPowerSeries<mint> power_projection(FormalPowerSeries<mint> f, FormalPowerSeries<mint> g) {
+    using fps = FormalPowerSeries<mint>;
+    assert(f.size() == g.size());
+    int n = f.size() - 1, k = 1;
+    vector<fps> P(n + 1, fps(k + 1));
+    vector<fps> Q(n + 1, fps(k + 1));
+    Q[0][0] = 1;
+    for(int i = 0; i <= n; i++)
+        P[i][0] = g[i];
+    for(int i = 0; i <= n; i++)
+        Q[i][1] = -f[i];
+    while(n) {
+        auto R = Q;
+        for(int i = 1; i <= n; i += 2)
+            R[i] = -R[i];
+        auto S = multiply2d(P, R);
+        auto T = multiply2d(Q, R);
+        vector<fps> U(n / 2 + 1, fps(k * 2 + 1));
+        vector<fps> V(n / 2 + 1, fps(k * 2 + 1));
+        for(int i = 0; i <= n / 2; i++)
+            U[i] = S[i * 2 + n % 2], V[i] = T[i * 2];
+        P = U, Q = V;
+        n /= 2, k *= 2;
+    }
+    return (P[0] * Q[0].inv()).pre(f.size());
+}
+
 } // namespace momohara
