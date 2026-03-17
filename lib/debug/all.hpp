@@ -4,22 +4,30 @@
 using namespace std;
 using namespace atcoder;
 
-/// ===== pair =====
-
-template <class T, class U>
-ostream &operator<<(ostream &os, const pair<T, U> &p) {
-    return os << "(" << p.first << ", " << p.second << ")";
-}
-
-/// ===== iterable container =====
-/// vector / debug vector / set / map / deque / list / etc
-
 template <class T>
 concept Iterable =
     requires(T a) {
         begin(a);
         end(a);
     } && !std::is_same_v<T, std::string>;
+
+template <class T>
+void debug_out(ostream &os, const T &x);
+
+/// ===== pair =====
+
+template <class T, class U>
+ostream &operator<<(ostream &os, const pair<T, U> &p) {
+    os << "(";
+    debug_out(os, p.first);
+    os << ", ";
+    debug_out(os, p.second);
+    os << ")";
+    return os;
+}
+
+/// ===== iterable container =====
+/// vector / debug vector / set / map / deque / list / etc
 
 template <Iterable T>
 ostream &operator<<(ostream &os, const T &v) {
@@ -29,10 +37,19 @@ ostream &operator<<(ostream &os, const T &v) {
         if(!first)
             os << ", ";
         first = false;
-        os << x;
+        debug_out(os, x);
     }
     os << "}";
     return os;
+}
+
+template <class T>
+void debug_out(ostream &os, const T &x) {
+    if constexpr(requires { x.val(); } && !Iterable<T>) {
+        os << x.val();
+    } else {
+        os << x;
+    }
 }
 
 /// ===== debug output =====
@@ -45,7 +62,7 @@ void dump_func() {
 
 template <class Head, class... Tail>
 void dump_func(Head &&head, Tail &&...tail) {
-    DUMPOUT << head;
+    debug_out(DUMPOUT, head);
     if(sizeof...(Tail) > 0)
         DUMPOUT << ", ";
     dump_func(std::forward<Tail>(tail)...);
