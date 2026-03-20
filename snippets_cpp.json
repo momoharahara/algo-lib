@@ -3,11 +3,11 @@
     "prefix": "combinationbig",
     "body": [
       "    vec<ll> fact(k + 1, 1), finv(k + 1, 0);",
-      "    REP(i, k) {",
+      "    rep(i, k) {",
       "        fact[i + 1] = fact[i] * (i + 1) % MOD;",
       "    }",
       "    finv[k] = mod_inv(fact[k], MOD);",
-      "    REP2(i, k) {",
+      "    rep2(i, k) {",
       "        finv[i] = finv[i + 1] * (i + 1) % MOD;",
       "    }",
       "",
@@ -40,9 +40,9 @@
     "body": [
       "auto nCr = [](ll n, ll r) -> mint {",
       "    mint ret = 1;",
-      "    REP(i, r) ret *= i + 1;",
+      "    rep(i, r) ret *= i + 1;",
       "    ret = ret.inverse();",
-      "    REP(i, r) ret *= n - i;",
+      "    rep(i, r) ret *= n - i;",
       "    return ret;",
       "};"
     ],
@@ -89,7 +89,7 @@
       "        lb = t1;",
       "}",
       "ll ans = INF;",
-      "rep(i, lb, ub + 1) chmin(ans, check(i));",
+      "REP(i, lb, ub + 1) chmin(ans, check(i));",
       "cout << ans << en;"
     ],
     "description": ""
@@ -122,17 +122,17 @@
       "        bool flag = false;",
       "        int l = -H;",
       "        int r = 0;",
-      "        REP(i, W) {",
+      "        rep(i, W) {",
       "            l += H;",
       "            r = min(N, l + H);",
       "            if(b <= l or r <= a)",
       "                continue;",
       "            if((l < a and a < r) or (l < b and b < r)) {",
       "                // 区間の端",
-      "                rep(j, l, r) {",
+      "                REP(j, l, r) {",
       "                    // 区間の範囲",
       "                }",
-      "                rep(j, max(l, a), min(r, b)) {",
+      "                REP(j, max(l, a), min(r, b)) {",
       "                    // クエリの対象範囲",
       "                }",
       "            } else {",
@@ -173,7 +173,7 @@
       "ll n;",
       "cin >> n;",
       "vec<ll> a(n);",
-      "REP(i,n){ cin>>a[i];}"
+      "rep(i,n){ cin>>a[i];}"
     ],
     "description": ""
   },
@@ -203,7 +203,7 @@
       "ll n, m;",
       "cin >> n >> m;",
       "vvec<ll> a(n, vec<ll>(m));",
-      "REP(i,n){REP(j,m){ cin>>a[i][j]; }}"
+      "rep(i,n){rep(j,m){ cin>>a[i][j]; }}"
     ],
     "description": ""
   },
