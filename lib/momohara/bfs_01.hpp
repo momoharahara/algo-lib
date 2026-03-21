@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 void bfs01(const Graph<T> &g, int s, std::vector<T> &d, T inf = std::numeric_limits<T>::max() / 4) {
@@ -37,4 +36,3 @@ std::vector<T> bfs01(const Graph<T> &g, int s, T inf = std::numeric_limits<T>::m
     return d;
 }
 
-} // namespace momohara

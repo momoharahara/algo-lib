@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <vector>
 
-namespace momohara {
 
 inline std::vector<long long> divisor(long long n) {
     std::vector<long long> ret;
@@ -18,4 +17,3 @@ inline std::vector<long long> divisor(long long n) {
     return ret;
 }
 
-} // namespace momohara

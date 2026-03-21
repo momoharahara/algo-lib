@@ -1,6 +1,5 @@
 #pragma once
 
-namespace momohara {
 
 inline long long pow2(long long x, long long n) {
     long long ans = 1;
@@ -43,4 +42,3 @@ inline long long pow2_m(long long x, long long n, long long mod) {
     return ans;
 }
 
-} // namespace momohara

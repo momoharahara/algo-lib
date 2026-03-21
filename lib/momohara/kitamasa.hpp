@@ -3,7 +3,6 @@
 #include <cstdint>
 #include <vector>
 
-namespace momohara {
 
 template <typename T>
 struct Kitamasa {
@@ -51,4 +50,3 @@ struct Kitamasa {
     }
 };
 
-} // namespace momohara

@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 template <class T>
 T LagrangeInterpolation(const std::vector<T> &y, long long t) {
@@ -25,4 +24,3 @@ T LagrangeInterpolation(const std::vector<T> &y, long long t) {
     return ret;
 }
 
-} // namespace momohara

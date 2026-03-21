@@ -5,7 +5,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename F, class T, typename Cost = int>
 class LCAEdge {
@@ -91,4 +90,3 @@ class LCAEdge {
     }
 };
 
-} // namespace momohara

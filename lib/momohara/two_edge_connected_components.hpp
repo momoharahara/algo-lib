@@ -4,7 +4,6 @@
 
 #include "low_link.hpp"
 
-namespace momohara {
 
 template <typename T = int>
 struct TwoEdgeConnectedComponents : LowLink<T> {
@@ -54,4 +53,3 @@ struct TwoEdgeConnectedComponents : LowLink<T> {
     }
 };
 
-} // namespace momohara

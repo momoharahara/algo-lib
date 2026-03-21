@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 long long MaxIndependentSet(const Graph<T> &g) {
@@ -55,4 +54,3 @@ long long MaxIndependentSet(const Graph<T> &g) {
     return ret;
 }
 
-} // namespace momohara

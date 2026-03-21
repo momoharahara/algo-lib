@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 
-namespace momohara {
 
 template <typename T = int>
 struct Edge {
@@ -89,4 +88,3 @@ struct Graph {
 template <typename T = int>
 using Edges = std::vector<Edge<T>>;
 
-} // namespace momohara

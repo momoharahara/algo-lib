@@ -2,7 +2,6 @@
 
 #include <algorithm>
 
-namespace momohara {
 
 template <typename T, const T id>
 struct LiChaoTree {
@@ -79,4 +78,3 @@ struct LiChaoTree {
     }
 };
 
-} // namespace momohara

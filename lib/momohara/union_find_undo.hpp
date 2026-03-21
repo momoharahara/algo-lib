@@ -3,7 +3,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 class UnionFindUndo {
     std::vector<int> data_;
@@ -62,4 +61,3 @@ class UnionFindUndo {
     }
 };
 
-} // namespace momohara

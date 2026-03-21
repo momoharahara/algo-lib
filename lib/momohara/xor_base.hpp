@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <vector>
 
-namespace momohara {
 
 inline bool xor_base(long long v, std::vector<long long> &base, std::vector<long long> &vs) {
     long long reduced = v;
@@ -18,4 +17,3 @@ inline bool xor_base(long long v, std::vector<long long> &base, std::vector<long
     return false;
 }
 
-} // namespace momohara

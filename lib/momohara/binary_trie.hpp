@@ -2,7 +2,6 @@
 
 #include <cassert>
 
-namespace momohara {
 
 template <typename U = unsigned, int B = 32>
 class BinaryTrie {
@@ -115,4 +114,3 @@ class BinaryTrie {
     }
 };
 
-} // namespace momohara

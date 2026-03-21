@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 inline void Eratosthenes(long long n, std::vector<int> &arr) {
     arr.resize(n + 1, 1);
@@ -14,4 +13,3 @@ inline void Eratosthenes(long long n, std::vector<int> &arr) {
     }
 }
 
-} // namespace momohara

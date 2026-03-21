@@ -6,7 +6,6 @@
 #include <iostream>
 #include <vector>
 
-namespace momohara {
 
 template <typename mint>
 struct NTT {
@@ -705,4 +704,3 @@ FormalPowerSeries<mint> power_projection(FormalPowerSeries<mint> f, FormalPowerS
     return (P[0] * Q[0].inv()).pre(f.size());
 }
 
-} // namespace momohara

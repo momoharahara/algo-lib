@@ -2,7 +2,6 @@
 
 #include <map>
 
-namespace momohara {
 
 inline std::map<long long, long long> factoring(long long n) {
     std::map<long long, long long> mp;
@@ -17,4 +16,3 @@ inline std::map<long long, long long> factoring(long long n) {
     return mp;
 }
 
-} // namespace momohara

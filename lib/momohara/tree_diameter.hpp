@@ -5,7 +5,6 @@
 
 #include "dijkstra.hpp"
 
-namespace momohara {
 
 template <typename T>
 std::tuple<T, int, int> tree_diameter(const Graph<T> &g, T inf = std::numeric_limits<T>::max() / 4) {
@@ -33,4 +32,3 @@ std::tuple<T, int, int> tree_diameter(const Graph<T> &g, T inf = std::numeric_li
     return {far2_dist, far1, far2};
 }
 
-} // namespace momohara

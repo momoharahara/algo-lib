@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 bool tsort(const Graph<T> &graph, std::vector<int> &order) {
@@ -34,4 +33,3 @@ bool tsort(const Graph<T> &graph, std::vector<int> &order) {
     return static_cast<int>(order.size()) == n;
 }
 
-} // namespace momohara

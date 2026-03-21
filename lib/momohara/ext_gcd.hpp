@@ -1,6 +1,5 @@
 #pragma once
 
-namespace momohara {
 
 inline long long extGCD(long long a, long long b, long long &x, long long &y) {
     if(b == 0) {
@@ -13,4 +12,3 @@ inline long long extGCD(long long a, long long b, long long &x, long long &y) {
     return d;
 }
 
-} // namespace momohara

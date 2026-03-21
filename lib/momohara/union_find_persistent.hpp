@@ -4,7 +4,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 class PersistentUnionFind {
   public:
@@ -65,4 +64,3 @@ class PersistentUnionFind {
     }
 };
 
-} // namespace momohara

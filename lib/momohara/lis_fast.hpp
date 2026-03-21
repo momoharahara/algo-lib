@@ -4,7 +4,6 @@
 #include <climits>
 #include <vector>
 
-namespace momohara {
 
 inline std::vector<long long> lis_fast(const std::vector<long long> &a) {
     long long n = static_cast<long long>(a.size());
@@ -23,4 +22,3 @@ inline std::vector<long long> lis_fast(const std::vector<long long> &a) {
     return b;
 }
 
-} // namespace momohara

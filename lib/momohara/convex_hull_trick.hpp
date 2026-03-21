@@ -4,7 +4,6 @@
 #include <cassert>
 #include <vector>
 
-namespace momohara {
 
 template <typename T, const T id>
 class ConvexHullTrick {
@@ -82,4 +81,3 @@ class ConvexHullTrick {
     }
 };
 
-} // namespace momohara

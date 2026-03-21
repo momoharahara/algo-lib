@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 
-namespace momohara {
 
 class AhoCorasick {
     std::vector<std::array<int, 26>> next_;
@@ -73,4 +72,3 @@ class AhoCorasick {
     }
 };
 
-} // namespace momohara

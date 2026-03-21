@@ -5,7 +5,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T = int>
 class LCA {
@@ -77,4 +76,3 @@ class LCA {
     }
 };
 
-} // namespace momohara

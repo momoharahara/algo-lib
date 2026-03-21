@@ -1,6 +1,5 @@
 #pragma once
 
-namespace momohara {
 
 inline long long floor_sum(long long n, long long m, long long a, long long b) {
     long long ans = 0;
@@ -22,4 +21,3 @@ inline long long floor_sum(long long n, long long m, long long a, long long b) {
     return ans;
 }
 
-} // namespace momohara

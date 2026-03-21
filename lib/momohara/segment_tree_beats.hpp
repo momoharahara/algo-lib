@@ -6,7 +6,6 @@
 #include <limits>
 #include <vector>
 
-namespace momohara {
 
 inline int ceil_pow2(int n) {
     int x = 0;
@@ -303,4 +302,3 @@ using SegmentTree = SegmentTreeBeats<S, op, e, F, mapping, composition, id>;
 
 } // namespace RangeUpdateDivideRangeSum
 
-} // namespace momohara

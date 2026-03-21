@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T = int>
 struct LowLink : Graph<T> {
@@ -64,4 +63,3 @@ struct LowLink : Graph<T> {
     }
 };
 
-} // namespace momohara

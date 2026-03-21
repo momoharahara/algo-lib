@@ -4,7 +4,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename E, typename F, typename PE, typename PV, typename T = int>
 class RerootingDP {
@@ -91,4 +90,3 @@ class RerootingDP {
     }
 };
 
-} // namespace momohara

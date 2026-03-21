@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 inline std::vector<int> prime(long long n) {
     std::vector<int> arr(n + 1, 1);
@@ -20,4 +19,3 @@ inline std::vector<int> prime(long long n) {
     return arr;
 }
 
-} // namespace momohara

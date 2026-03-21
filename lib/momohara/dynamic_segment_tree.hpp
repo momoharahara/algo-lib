@@ -5,7 +5,6 @@
 #include <memory>
 #include <utility>
 
-namespace momohara {
 
 template <class S, S (*op)(S, S), S (*e)()>
 class DynamicSegmentTree {
@@ -188,4 +187,3 @@ class DynamicSegmentTree {
     }
 };
 
-} // namespace momohara

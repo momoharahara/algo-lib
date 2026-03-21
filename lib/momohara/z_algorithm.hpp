@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-namespace momohara {
 
 template <class T>
 std::vector<int> z_algorithm(const std::vector<T> &s) {
@@ -33,4 +32,3 @@ inline std::vector<int> z_algorithm(const std::string &s) {
     return z_algorithm(s2);
 }
 
-} // namespace momohara

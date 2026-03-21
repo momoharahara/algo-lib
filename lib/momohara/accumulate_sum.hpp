@@ -3,7 +3,6 @@
 #include <cassert>
 #include <vector>
 
-namespace momohara {
 
 template <typename T>
 struct AccumulateSum {
@@ -79,4 +78,3 @@ struct AccumulateSum3 {
     }
 };
 
-} // namespace momohara

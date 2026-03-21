@@ -3,7 +3,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 template <typename T>
 struct RollingHash {
@@ -42,4 +41,3 @@ struct RollingHash {
     }
 };
 
-} // namespace momohara

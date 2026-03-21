@@ -3,7 +3,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 template <class Abel>
 struct UnionFindPotential {
@@ -66,4 +65,3 @@ struct UnionFindPotential {
     }
 };
 
-} // namespace momohara

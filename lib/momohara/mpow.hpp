@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 template <class S>
 std::vector<std::vector<S>> mIdentity(int n) {
@@ -36,4 +35,3 @@ std::vector<std::vector<S>> mPow(std::vector<std::vector<S>> a, long long e) {
     return ret;
 }
 
-} // namespace momohara

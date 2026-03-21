@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 struct CentroidDecomposition {
     std::vector<int> rank;
@@ -63,4 +62,3 @@ struct CentroidDecomposition {
     }
 };
 
-} // namespace momohara

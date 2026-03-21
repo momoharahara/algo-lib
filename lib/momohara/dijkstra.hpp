@@ -8,7 +8,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 void Dijkstra(const Graph<T> &g, int s, std::vector<T> &d, T inf = std::numeric_limits<T>::max() / 4) {
@@ -37,4 +36,3 @@ std::vector<T> Dijkstra(const Graph<T> &g, int s, T inf = std::numeric_limits<T>
     return d;
 }
 
-} // namespace momohara

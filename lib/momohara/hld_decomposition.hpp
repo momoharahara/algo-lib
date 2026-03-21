@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T = int>
 class HLD {
@@ -105,4 +104,3 @@ class HLD {
     }
 };
 
-} // namespace momohara

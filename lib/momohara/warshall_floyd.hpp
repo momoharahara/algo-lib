@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 void WarshallFloyd(const Graph<T> &g, std::vector<std::vector<T>> &dist, T inf = std::numeric_limits<T>::max() / 4) {
@@ -30,4 +29,3 @@ void WarshallFloyd(const Graph<T> &g, std::vector<std::vector<T>> &dist, T inf =
     }
 }
 
-} // namespace momohara

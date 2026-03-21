@@ -8,7 +8,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 class SteinerTree {
@@ -55,4 +54,3 @@ class SteinerTree {
     }
 };
 
-} // namespace momohara

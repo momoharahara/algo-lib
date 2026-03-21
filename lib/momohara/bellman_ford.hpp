@@ -5,7 +5,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T>
 void BellmanFord(
@@ -41,4 +40,3 @@ void BellmanFord(
     }
 }
 
-} // namespace momohara

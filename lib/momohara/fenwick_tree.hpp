@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 template <typename T>
 class FenwickTree {
@@ -46,4 +45,3 @@ class FenwickTree {
     }
 };
 
-} // namespace momohara

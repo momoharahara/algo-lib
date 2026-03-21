@@ -4,7 +4,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 template <typename T, typename F>
 class CartesianTree {
@@ -73,4 +72,3 @@ class CartesianTree {
     }
 };
 
-} // namespace momohara

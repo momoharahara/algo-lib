@@ -6,7 +6,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 template <typename W>
 struct RangeEdgeGraph {
@@ -72,4 +71,3 @@ struct RangeEdgeGraph {
     }
 };
 
-} // namespace momohara

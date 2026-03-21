@@ -6,7 +6,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 template <typename T, typename F, typename U>
 class SegmentTree2DInner {
@@ -152,4 +151,3 @@ class RangeTree {
     }
 };
 
-} // namespace momohara

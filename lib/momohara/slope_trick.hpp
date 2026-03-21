@@ -5,7 +5,6 @@
 #include <queue>
 #include <vector>
 
-namespace momohara {
 
 class SlopeTrick {
     std::priority_queue<long long> left_;
@@ -51,4 +50,3 @@ class SlopeTrick {
     }
 };
 
-} // namespace momohara

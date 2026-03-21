@@ -7,7 +7,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 class Mo {
     int n_;
@@ -63,4 +62,3 @@ class Mo {
     }
 };
 
-} // namespace momohara

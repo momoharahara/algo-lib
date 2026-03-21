@@ -2,7 +2,6 @@
 
 #include <vector>
 
-namespace momohara {
 
 template <class T>
 struct Combination {
@@ -71,4 +70,3 @@ struct Combination {
     }
 };
 
-} // namespace momohara

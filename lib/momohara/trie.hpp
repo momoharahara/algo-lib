@@ -5,7 +5,6 @@
 #include <utility>
 #include <vector>
 
-namespace momohara {
 
 class Trie {
     std::vector<std::array<int, 26>> next_;
@@ -85,4 +84,3 @@ class Trie {
     }
 };
 
-} // namespace momohara

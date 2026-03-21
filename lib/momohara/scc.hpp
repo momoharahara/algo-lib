@@ -6,7 +6,6 @@
 
 #include "graph.hpp"
 
-namespace momohara {
 
 template <typename T = int>
 class SCC {
@@ -87,4 +86,3 @@ class SCC {
     }
 };
 
-} // namespace momohara

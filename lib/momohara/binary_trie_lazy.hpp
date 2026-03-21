@@ -3,7 +3,6 @@
 #include <cassert>
 #include <utility>
 
-namespace momohara {
 
 template <typename U = unsigned, int B = 32>
 class LazyBinaryTrie {
@@ -138,4 +137,3 @@ class LazyBinaryTrie {
     }
 };
 
-} // namespace momohara
