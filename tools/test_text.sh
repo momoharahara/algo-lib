@@ -14,4 +14,5 @@ error_file="tools/err.txt"
 
 
 python3 tools/expand.py "$src_file" -o "$expanded_file"
-g++ "$expanded_file" -std=gnu++23 -I lib -o "$bin_file" -Wall -Wextra -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -DDEBUG && "$bin_file" < "$input_file" > "$output_file" 2> "$error_file" && pbcopy < "$expanded_file"
+g++ "$expanded_file" -std=gnu++23 -I lib -o "$bin_file" -Wall -Wextra -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -DDEBUG && "$bin_file" < "$input_file" > "$output_file" 2> "$error_file"
+pbcopy < "$expanded_file"
