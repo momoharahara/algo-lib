@@ -41,7 +41,7 @@
       "auto nCr = [](ll n, ll r) -> mint {",
       "    mint ret = 1;",
       "    rep(i, r) ret *= i + 1;",
-      "    ret = ret.inverse();",
+      "    ret = ret.inv();",
       "    rep(i, r) ret *= n - i;",
       "    return ret;",
       "};"

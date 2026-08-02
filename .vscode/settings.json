@@ -112,7 +112,12 @@
   },
   "C_Cpp.errorSquiggles": "enabled",
   "github.copilot.enable": {
-    "*": false
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "cpp": false,
+    "shellscript": false
   },
   "github.copilot.inlineSuggest.enable": false
 }

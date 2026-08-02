@@ -11,7 +11,7 @@ bin_file="bin/$1.out"
 test_folder="test/$1/"
 
 python3 tools/expand.py "$src_file" -o "$expanded_file"
-g++ "$expanded_file" -std=gnu++23 -I lib -o "$bin_file" -Wall -Wextra -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -DDEBUG && oj test -c "$bin_file" -d "$test_folder"
+g++ "$expanded_file" -std=gnu++23 -I lib -o "$bin_file" -Wall -Wextra -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -DDEBUG && oj test -c "$bin_file" -d "$test_folder" -N
 pbcopy < "$expanded_file"
 
 # g++ $src_file -std=gnu++23 -I lib -o $bin_file -Wall -Wextra -O2 && oj test  -c "$bin_file" -d "$test_folder"
