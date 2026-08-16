@@ -3,7 +3,7 @@
 cd `dirname $0`
 cd ..
 
-contest_name='abc469'
+contest_name='abc470'
 problem_name="${contest_name}"
 # problem_name='codequeen2026'
 contest_url='https://atcoder.jp/contests/'$contest_name'/tasks/'$problem_name'_'
