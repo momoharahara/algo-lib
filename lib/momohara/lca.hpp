@@ -5,7 +5,6 @@
 
 #include "graph.hpp"
 
-
 template <typename T = int>
 class LCA {
     int n_;
@@ -16,7 +15,7 @@ class LCA {
   public:
     LCA() : n_(0), log2_n_(0) {}
 
-    LCA(const Graph<T> &g, int root)
+    LCA(const Graph<T> &g, int root = 0)
         : n_(static_cast<int>(g.size())),
           log2_n_(1),
           depth_(n_, 0) {
@@ -75,4 +74,3 @@ class LCA {
         }
     }
 };
-

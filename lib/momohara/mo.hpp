@@ -7,7 +7,6 @@
 #include <utility>
 #include <vector>
 
-
 class Mo {
     int n_;
     int width_;
@@ -29,7 +28,7 @@ class Mo {
 
     template <class Add, class Remove, class Answer>
     auto run(Add add, Remove remove, Answer answer) const {
-        using Result = decltype(answer());
+        using Result = decltype(answer(0));
 
         int q = size();
         std::vector<int> order(q);
@@ -56,9 +55,8 @@ class Mo {
                 remove(nl++);
             while(nr > right_[idx])
                 remove(--nr);
-            ans[idx] = answer();
+            ans[idx] = answer(idx);
         }
         return ans;
     }
 };
-
