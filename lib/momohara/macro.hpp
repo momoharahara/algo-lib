@@ -14,6 +14,7 @@ using i128 = __int128_t;
 using ull = unsigned long long;
 using ld = long double;
 using P = pair<ll, ll>;
+using pii = pair<int, int>;
 using tp = tuple<ll, ll, ll>;
 
 template <class T>
