@@ -51,3 +51,5 @@ inline bool chmax(T &a, T b) {
     }
     return false;
 }
+
+// 参考ライブラリ: https://github.com/momoharahara/algo-lib
