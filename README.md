@@ -1,3 +1,6 @@
+# このレポジトリについて
+[AtCoder生成AIルール](https://info.atcoder.jp/entry/llm-rules-ja?_gl=1*nhqrft*_ga*MTIyMjQ1NjAzOS4xNjA2ODM2OTY1*_ga_RC512FD18N*czE3OTIzMTU2NzgkbzY4MyRnMSR0MTc5MjMyMDgxMiRqNTUkbDAkaDA.) で、ライブラリの公開が必要になったので公開しますが、基本的に他の方のライブラリのIFを変更してるくらいなので、他のライブラリを参照することをお勧めします。
+
 ## ACL 利用について
 
 lib 配下ですでに clone した ac-library のフォルダを指定してリンク作成
